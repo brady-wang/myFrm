@@ -1,6 +1,8 @@
 <?php
 
-define("ROOT", __DIR__ . "index.php/");
+define("ROOT", __DIR__ . "../");
+
+define("PUBLIC_PATH",__DIR__);
 
 define('ROOT_PATH',"../");
 
@@ -23,6 +25,7 @@ if("APP_DEBUG"){
 } else {
 	ini_set("display_errors","off");
 }
+
 
 
 include CORE_PATH . "Common/base_helper.php";

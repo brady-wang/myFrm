@@ -74,12 +74,22 @@ class App
 
 	public function display($file)
 	{
-		$file = APP_PATH."View/".$file;
-		if(is_file($file)){
-			extract($this->assign); // 打散后视图读取变量
-			include $file;
-		} else{
-			throw new \Exception($file." 不存在");
-		}
+		//$file = APP_PATH."View/".$file;
+//		if(is_file($file)){
+//			extract($this->assign); // 打散后视图读取变量
+//			include $file;
+//		} else{
+//			throw new \Exception($file." 不存在");
+//		}
+		dd($file);
+		require_once ROOT_PATH.'vendor/autoload.php';
+		$loader = new \Twig_Loader_Filesystem(APP_PATH.'View');
+		$twig = new \Twig_Environment($loader, array(
+			'cache' => false,
+			'debug' => APP_BUGE
+		));
+		$template = $twig->load($file);//载入文件
+		$template->display($this->assign?:array());
+
 	}
 }
