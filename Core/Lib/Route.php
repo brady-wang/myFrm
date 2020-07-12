@@ -18,6 +18,9 @@ class Route
 		返回控制器和方法
 		*/
 
+		$default_controller = Config::get("default_controller","route");
+		$default_method = Config::get("default_method","route");
+
 		if (isset($_SERVER['REQUEST_URI']) && $_SERVER['REQUEST_URI'] != "/") {
 			//  user/index?id=122
 
@@ -32,7 +35,7 @@ class Route
 				$this->method = $arr[1];
 				unset($arr[1]);
 			} else {
-				$this->method = "index";
+				$this->method = $default_method;
 			}
 
 
@@ -49,8 +52,8 @@ class Route
 				}
 			}
 		} else {
-			$this->controller = "index";
-			$this->method = "index";
+			$this->controller = $default_controller;
+			$this->method = $default_method;
 		}
 
 		// 处理自带的get参数

@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 
+use Core\Lib\Config;
 use Core\Lib\Model;
 
 class UserController extends BaseController
@@ -11,7 +12,6 @@ class UserController extends BaseController
 
 	public function test()
 	{
-
 
 		$this->assign('username',"brady");
 		$this->assign('title',"视图");
