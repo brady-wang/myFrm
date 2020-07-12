@@ -5,14 +5,14 @@ namespace App\Controller;
 
 
 use Core\Lib\Config;
+use Core\Lib\Log;
 
 class HomeController extends BaseController
 {
 
 	public function index()
 	{
-		$data = Config::all("route");
 
-		dd($data);
+		Log::error("this ;.''''is a get ",['hello','world你好']);
 	}
 }

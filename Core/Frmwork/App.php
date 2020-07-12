@@ -4,6 +4,7 @@
 namespace Core;
 
 
+use Core\Lib\Log;
 use Core\Lib\Route;
 
 class App
@@ -16,6 +17,9 @@ class App
 	// 框架入口 运行
 	public static function run()
 	{
+
+		Log::init();
+
 		$route = new Route();
 
 		$controller = $route->controller;
@@ -30,6 +34,9 @@ class App
 		} else {
 			throw new \Exception("控制器不存在");
 		}
+
+
+
 	}
 
 	// 自动加载路由

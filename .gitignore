@@ -1,3 +1,4 @@
 .idea
 .user.ini
 .htaccess
+storage/logs/*

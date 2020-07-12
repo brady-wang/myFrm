@@ -1,5 +1,7 @@
 <?php
 
+define("ROOT",__DIR__."/");
+
 define('ROOT_PATH',"./");
 
 define('CORE_PATH',ROOT_PATH."Core/");
@@ -8,7 +10,7 @@ define('APP_PATH',ROOT_PATH."App/");
 
 define("MODULE","\app");
 
-define('APP_BUGE',"on");
+define('APP_BUGE',true);
 
 if("APP_DEBUG"){
 	ini_set("display_errors","on");
