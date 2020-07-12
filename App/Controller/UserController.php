@@ -21,11 +21,22 @@ class UserController extends BaseController
 
 	public function info()
 	{
+//		$model = new Model();
+//
+//		$sql  = "select * from users";
+//
+//		$res = $model->query($sql);
+//		dd($res->fetchAll());
+
 		$model = new Model();
+		$data = $model->select("users",['id']);
+		dump($data);
+	}
 
-		$sql  = "select * from users";
-
-		$res = $model->query($sql);
-		dd($res->fetchAll());
+	public function add()
+	{
+		$model = new Model();
+		$data = $model->insert("users",['name'=>'test','age'=>'333']);
+		dump($data);
 	}
 }

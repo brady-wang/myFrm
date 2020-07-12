@@ -1,0 +1,14 @@
+{
+  "name": "brady_frmwork",
+  "description":"php framwork",
+  "type":"Framwork",
+  "keywords":[
+    "php","PHP Framwork"
+  ],
+  "require":{
+    "php":">=7.1.0",
+    "filp/whoops":"*",
+    "symfony/var-dumper":"*",
+    "catfan/Medoo":"*"
+  }
+}
